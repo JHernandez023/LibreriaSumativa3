@@ -1,0 +1,58 @@
+﻿@model LibreriaSumativa3.Libro
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalles</title>
+</head>
+<body>
+    <div>
+        <h4>Libro</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Autor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Autor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Editorial)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Editorial)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaPublicado)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FechaPublicado)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
+        @Html.ActionLink("Volver a la Lista", "Index")
+    </p>
+</body>
+</html>

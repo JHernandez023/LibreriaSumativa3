@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LibreriaSumativa3.Libro>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type= "text/css"/>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+</head>
+<body>
+    <p class="btn btn-success text-bg-secondary">
+        @Html.ActionLink("Agregar nuevo Libro", "Crear")
+    </p>
+    <table class="table table-success table-striped-columns align-content-center">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Editorial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPublicado)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Editorial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPublicado)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
+                @Html.ActionLink("Detalles", "Detalles", new { id=item.Id }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@model LibreriaSumativa3.Libro
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar</title>
+</head>
+<body>
+    <h3>¿Está seguro de eliminar este libro del catálogo?</h3>
+    <div>
+        <h4>Libro</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Autor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Autor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Editorial)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Editorial)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaPublicado)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FechaPublicado)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                @Html.ActionLink("Volver al Listado", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
